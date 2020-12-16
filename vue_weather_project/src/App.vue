@@ -1,27 +1,31 @@
 <template>
   <div id="app">
-    <FirstComponent></FirstComponent>
+    <WeatherInformerComponent></WeatherInformerComponent>
   </div>
 </template>
 
 <script>
-import FirstComponent from "./components/WeatherInformer.vue"
+import WeatherInformerComponent from "./components/WeatherInformer.vue"
 
 export default {
   name: 'App',
   components: {
-    FirstComponent
+    WeatherInformerComponent
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+  #app {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: rgb(244, 123, 186);
+    background: linear-gradient(-25deg, rgba(244, 123, 186, 0.5) 20%, rgba(90, 95, 245, 0.5) 80%);
+  }
+  body {
+    margin: 0;
+    padding: 0;
+  }
 </style>
