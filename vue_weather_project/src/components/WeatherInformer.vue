@@ -12,7 +12,7 @@
         width: 400px;
         min-height: 255px;
         padding: 30px;
-        background-image: url('img/forest.png');
+        background-image: url('../assets/forest.jpg');
         background-size: cover;
         background-position: center center;
         border-radius: 20px;
