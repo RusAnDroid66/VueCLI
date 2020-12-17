@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <user-card-component></user-card-component>
+    <user-card-component :full_name="name" :username="username" :img_url="img_url" :email="email" :phone="phone"></user-card-component>
   </div>
 </template>
 
@@ -11,6 +11,15 @@
     name: 'App',
     components: {
       UserCardComponent
+    }, 
+    data() {
+      return {
+        name: "Иванов Иван Иванович",
+        username: "romashka",
+        img_url: "img/70.jpg",
+        email: "coldrabbit48@example.com",
+        phone: "+7-495-266-57-34"
+      }
     }
   }
 </script>

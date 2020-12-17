@@ -1,24 +1,23 @@
 <template>
     <div id="app">
         <div class="user-card">
-            <img src="../assets/img/70.jpg" class="user-photo">
-            <p class="user-nickname">romashka</p>
+            <img :src="get_img_url" class="user-photo">
+            <p class="user-nickname">{{ username }}</p>
             <p class="user-name">
-                Иванов Иван<br>
-                Иванович
+                {{ get_last_name }} {{ get_first_name }} <br> {{ get_patronymic }}
             </p>
             <hr>
             <p class="user-info-item">
                 <img src="../assets/img/location.png">
-                Москва, Юбилейная 50
+                {{ adress }}
             </p>
             <p class="user-info-item">
                 <img src="../assets/img/mail.png">
-                coldrabbit48@example.com
+                {{ email }}
             </p>
             <p class="user-info-item">
                 <img src="../assets/img/phone.png">
-                +7-495-266-57-34
+                {{ phone }}
             </p>
         </div>
     </div>
@@ -26,7 +25,25 @@
 
 <script>
     export default {
-        name: 'UserCardComponent'
+        name: 'UserCardComponent',
+        props: ["img_url", "username", "full_name", "adress", "email", "phone"],
+        computed: {
+            get_first_name() {
+                return this.full_name.split(" ")[1];
+            },
+
+            get_last_name() {
+                return this.full_name.split(" ")[0];
+            },
+
+            get_patronymic() {
+                return this.full_name.split(" ")[2];
+            },
+            
+            get_img_url() {
+                return require(`../assets/${this.img_url}`)
+            }
+        }   
     }
 </script>
 
