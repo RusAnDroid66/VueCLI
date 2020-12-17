@@ -28,7 +28,7 @@
         this.axios
           .get('http://37.77.104.246/users/getrandom.php')
           .then(response => {
-            let name_array = [response.data.lastName, response.data.firstName]
+            let name_array = [response.data.firstName, response.data.lastName]
             this.name = name_array.join(' ');
             this.img_url = response.data.img;
             this.email = response.data.email;

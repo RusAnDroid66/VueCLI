@@ -4,7 +4,7 @@
             <img :src="get_img_url" class="user-photo">
             <p class="user-nickname">{{ username }}</p>
             <p class="user-name">
-                {{ get_last_name }} {{ get_first_name }} <br> {{ get_patronymic }}
+                {{ get_first_name }} {{ get_last_name }} <br> {{ get_patronymic }}
             </p>
             <hr>
             <p class="user-info-item">
@@ -29,11 +29,11 @@
         props: ["img_url", "username", "full_name", "adress", "email", "phone"],
         computed: {
             get_first_name() {
-                return this.full_name.split(" ")[1];
+                return this.full_name.split(" ")[0];
             },
 
             get_last_name() {
-                return this.full_name.split(" ")[0];
+                return this.full_name.split(" ")[1];
             },
 
             get_patronymic() {
