@@ -1,6 +1,6 @@
 <template>
     <div class="wind">
-        <img src="../assets/wind.png"> 12 <small>м/с</small>
+        <img src="../assets/wind.png"> {{ wind }} <small>м/с</small>
     </div>
 </template>
 
@@ -27,8 +27,6 @@
 <script>
     export default {
         name: 'WindComponent',
-        data() {
-            return {}
-        }
+        props: ["wind"]
     }
 </script>

@@ -1,10 +1,11 @@
 <template>
     <div class="informer-container">
-        <TemperatureComponent></TemperatureComponent>
+        <TemperatureComponent :temperatureReal="temperatureReal" :temperatureFeel="temperatureFeel"></TemperatureComponent>
         <div class="flex-break"></div>
-        <HumidityComponent></HumidityComponent>
+        <HumidityComponent :humidity="humidity"></HumidityComponent>
         <div class="vertical-divider"></div>
-        <WindComponent></WindComponent>
+        <WindComponent :wind="wind"></WindComponent>
+        {{ temperatureFeel }}
     </div>
 </template>
 
@@ -50,8 +51,6 @@
             HumidityComponent,
             WindComponent
         },
-        data() {
-            return {}
-        }
+        props: ["temperatureReal", "temperatureFeel", "humidity", "wind"]
     }
 </script>

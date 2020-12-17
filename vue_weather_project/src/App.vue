@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <WeatherInformerComponent></WeatherInformerComponent>
+    <WeatherInformerComponent :temperatureReal="temperatureReal" :temperatureFeel="temperatureFeel" :humidity="humidity" :wind="wind"></WeatherInformerComponent>
   </div>
 </template>
 
@@ -11,6 +11,14 @@ export default {
   name: 'App',
   components: {
     WeatherInformerComponent
+  },
+  data(){
+    return {
+      temperatureReal: 1,
+      temperatureFeel: '-3.2',
+      humidity: 6,
+      wind: 20
+    }
   }
 }
 </script>
@@ -24,6 +32,7 @@ export default {
     background: rgb(244, 123, 186);
     background: linear-gradient(-25deg, rgba(244, 123, 186, 0.5) 20%, rgba(90, 95, 245, 0.5) 80%);
   }
+
   body {
     margin: 0;
     padding: 0;
