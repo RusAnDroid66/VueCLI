@@ -41,7 +41,7 @@
             },
             
             get_img_url() {
-                return require(`../assets/${this.img_url}`)
+                return this.img_url;
             }
         }   
     }
